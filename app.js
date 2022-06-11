@@ -25,25 +25,22 @@ class TrafficLight {
         this.amber = amber;
         this.green = green;
         this.standById;
-        this.green_blink;
         this.init();
     }
 
     init() {
-        this.red.style.backgroundColor = 'gray';
-        this.amber.style.backgroundColor = 'gray';
-        this.green.style.backgroundColor = 'gray';
+        this.setColor({red: 0, amber: 0, green: 0})
     }
 
     standby() {
         let state = 1;
          this.standById = setInterval((t) => {
             if(state === 1) {
-                t.setColor({red: 0, amber: 0, green: 0});
                 state = 0;
+                t.setColor({red: 0, amber: state, green: 0});
             } else {
-                t.setColor({red: 0, amber: 1, green: 0});
                 state = 1;
+                t.setColor({red: 0, amber: state, green: 0});
             }
         }, 1000, this);
     }
@@ -60,7 +57,7 @@ class TrafficLight {
         this.init();
     }
 
-    working(){
+    working() {
         this.setColor({red: 1, amber: 0, green: 0});
         setTimeout(() => {this.setColor({red: 1, amber: 1, green: 0})}, 8000);
         setTimeout(() => {this.setColor({red: 0, amber: 0, green: 1})}, 10000);
@@ -76,7 +73,7 @@ class TrafficLight {
                     state = 1;
                 }
             }, 500)
-        },14000)
+        }, 14000)
         setTimeout(() => {
             clearInterval(this.green_blink);
             this.setColor({red: 0, amber: 1, green: 0 });
@@ -119,25 +116,83 @@ t2.standby();
 t3.standby();
 t4.standby();
 
-
 start.addEventListener('click', () => {
     start.style.display = 'none';
     t1.stopStandBy();
     t2.stopStandBy();
     t3.stopStandBy();
     t4.stopStandBy();
+    
+    t1.setColor({red: 1, amber: 0, green: 0});
+    t2.setColor({red: 0, amber: 0, green: 1});
+    t3.setColor({red: 0, amber: 0, green: 1});
+    t4.setColor({red: 1, amber: 0, green: 0});
+    working();
 
-    t1.working();
-    t2.working2();
-    t3.working2();
-    t4.working();
-
-    let work = setInterval(() => {
-    t1.working();
-    t2.working2();
-    t3.working2();
-    t4.working();
-    }, 20000);
+    function working() {
+        setTimeout(() => {
+            let state = 1;
+            green_blink = setInterval(() => {
+                if(state === 1){
+                    t2.setColor({red: 0, amber: 0, green: 0 });
+                    t3.setColor({red: 0, amber: 0, green: 0 });
+                    state = 0;
+                }
+                else{
+                    t2.setColor({red: 0, amber: 0, green: 1 });
+                    t3.setColor({red: 0, amber: 0, green: 1 });
+                    state = 1;
+                }
+            }, 500)
+        }, 4000)
+    
+        setTimeout(() => {
+            clearInterval(green_blink);
+            t1.setColor({red: 1, amber: 1, green: 0});
+            t2.setColor({red: 0, amber: 1, green: 0});
+            t3.setColor({red: 0, amber: 1, green: 0});
+            t4.setColor({red: 1, amber: 1, green: 0});
+        }, 8000)
+    
+        setTimeout(() => {
+            t1.setColor({red: 0, amber: 0, green: 1});
+            t2.setColor({red: 1, amber: 0, green: 0});
+            t3.setColor({red: 1, amber: 0, green: 0});
+            t4.setColor({red: 0, amber: 0, green: 1});
+        }, 10000)
+    
+        setTimeout(() => {
+            let state = 1;
+            green_blink = setInterval(() => {
+                if(state === 1){
+                    t1.setColor({red: 0, amber: 0, green: 0 });
+                    t4.setColor({red: 0, amber: 0, green: 0 });
+                    state = 0;
+                }
+                else{
+                    t1.setColor({red: 0, amber: 0, green: 1 });
+                    t4.setColor({red: 0, amber: 0, green: 1 });
+                    state = 1;
+                }
+            }, 500)
+        }, 14000)
+    
+        setTimeout(() => {
+            clearInterval(green_blink);
+            t1.setColor({red: 0, amber: 1, green: 0});
+            t2.setColor({red: 1, amber: 1, green: 0});
+            t3.setColor({red: 1, amber: 1, green: 0});
+            t4.setColor({red: 0, amber: 1, green: 0});
+        }, 18000)
+    
+        setTimeout(() => {
+            t1.setColor({red: 1, amber: 0, green: 0});
+            t2.setColor({red: 0, amber: 0, green: 1});
+            t3.setColor({red: 0, amber: 0, green: 1});
+            t4.setColor({red: 1, amber: 0, green: 0});
+            working();
+        }, 20000)
+    }
 });
 
 stop.addEventListener('click', () => {
