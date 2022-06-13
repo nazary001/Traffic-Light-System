@@ -54,7 +54,7 @@ class TrafficLight {
                 t.setColor(Color.none);
                 state = 1;
             }
-        }, 500, this);
+        },500, this);
     }
 
     
@@ -103,10 +103,15 @@ start.addEventListener('click', () => {
         await sleep(4000);
         if(isRunning === false) return;
 
-        goBlinking(Color.green);
+        t2.goBlinking(Color.green);
+        t3.goBlinking(Color.green);
+
 
         await sleep(4000);
         if(isRunning === false) return;
+
+        t2.init();
+        t3.init();
         
         t1.setColor(Color.redAmber);
         t2.setColor(Color.amber);
@@ -124,11 +129,14 @@ start.addEventListener('click', () => {
         await sleep(4000);
         if(isRunning === false) return;
         
-        goBlinking(Color.green);
+        t1.goBlinking(Color.green);
+        t4.goBlinking(Color.green);
         
         await sleep(4000);
         if(isRunning === false) return;
-    
+
+        t1.init();
+        t4.init();
 
         t1.setColor(Color.amber);
         t2.setColor(Color.redAmber);
