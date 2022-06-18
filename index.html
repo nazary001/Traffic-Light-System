@@ -12,44 +12,69 @@
 </head>
 <body>
     <h1>Traffic-Light-System</h1>
-    <div class = 'global_div'>
-        <div class = 'grass' id = 'light_box_1'>
-            <div id= "t1" class = 'traffic-light'>
-                <div class = 'green'></div>
-                <div class = 'amber'></div>
-                <div class = 'red' ></div>
+    <div class = 'body_div'>
+        <div class = 'global_div'>
+            <div class = 'grass' id = 'light_box_1'>
+                <div id= "t1" class = 'traffic-light'>
+                    <div class = 'green'></div>
+                    <div class = 'amber'></div>
+                    <div class = 'red' ></div>
+                </div>
+            </div>
+            <div class = 'road'>
+                <div class = 'road_part_vertical'></div>
+                <hr class = 'hr_vertical'>
+                <div class = 'road_part_vertical'></div>
+            </div>
+            <div class = 'grass' id = 'light_box_2'>
+                <div id = 't2' class = 'traffic-light'>
+                    <div class = 'green'></div>
+                    <div class = 'amber'></div>
+                    <div class = 'red'></div>
+                </div>
+            </div>
+            <div class = 'road'>
+                <div class = 'road_part_horizontal'></div>
+                <div class = 'road_part_horizontal'></div>
+            </div>
+            <div class = 'inersection'></div>
+            <div class = 'road'>
+                <div class = 'road_part_horizontal'></div>
+                <div class = 'road_part_horizontal'></div>
+            </div>
+            <div class = 'grass' id = 'light_box_3'>
+                <div id = 't3' class = 'traffic-light'>
+                    <div class = 'red'></div>
+                    <div class = 'amber'></div>
+                    <div class = 'green'></div>
+                </div>
+            </div>
+            <div class = 'road'>
+                <div class = 'road_part_vertical'></div>
+                <div class = 'road_part_vertical'></div>
+            </div>
+            <div class = 'grass' id = 'light_box_4'>
+                <div id = 't4' class = 'traffic-light'>
+                    <div class = 'red'></div>
+                    <div class = 'amber'></div>
+                    <div class = 'green'></div>
+                </div>
             </div>
         </div>
-        <div class = 'road'></div>
-        <div class = 'grass' id = 'light_box_2'>
-            <div id = 't2' class = 'traffic-light'>
-                <div class = 'green'></div>
-                <div class = 'amber'></div>
-                <div class = 'red'></div>
-            </div>
-        </div>
-        <div class = 'road'></div>
-        <div class = 'inersection'>
+        <div class = 'buttons'>
             <button id = 'start_button'>Start</button>
             <button id = 'stop_button'>Stop</button>
-        </div>
-        <div class = 'road'></div>
-        <div class = 'grass' id = 'light_box_3'>
-            <div id = 't3' class = 'traffic-light'>
-                <div class = 'red'></div>
-                <div class = 'amber'></div>
-                <div class = 'green'></div>
-            </div>
-        </div>
-        <div class = 'road'></div>
-        <div class = 'grass' id = 'light_box_4'>
-            <div id = 't4' class = 'traffic-light'>
-                <div class = 'red'></div>
-                <div class = 'amber'></div>
-                <div class = 'green'></div>
-            </div>
+            <button id = 'add_car_top'>Add car top</button>
+            <button id = 'add_car_top'>Add car right</button>
+            <button id = 'add_car_top'>Add car bottom</button>
+            <button id = 'add_car_top'>Add car left</button>
+            <button id = 'add_car_top'>Random adds</button>
         </div>
     </div>
-    <script src = 'app.js'></script>
+    
+    <script src = 'traffic-lights.js'></script>
+    <script src = 'cars.js'></script>
+    <script src = 'road.js'></script>
+
 </body>
 </html>

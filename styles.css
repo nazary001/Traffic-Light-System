@@ -13,16 +13,16 @@ h1 {
     text-align: center;
 }
 
-.global_div {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.body_div{
+    display: flex;
 }
 
-.grass,
-.inersection,
-.road{
-    min-width: 20vw;
-    min-height: 20vh;
+.global_div {
+display: grid;
+grid-template-columns: 15rem 12rem 15rem;
+grid-template-rows: 15rem 12rem 15rem;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
 }
 
 .grass {
@@ -31,6 +31,19 @@ h1 {
 
 .road {
     background-color:gray;
+    display: flex;
+}
+
+.road_part_vertical{
+    width: 100%;
+}
+
+.hr_vertical{
+    border-top: 0.5rem dashed white;
+    transform: rotate(90deg);
+    height: 0;
+    width: 100%;
+    margin: 0;
 }
 
 .inersection{
@@ -38,25 +51,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:rgb(185, 185, 0);
-}
-
-#start_button{
-    width: 100%;
-    height: 100%;
-    font-size: 5ch;
-    font-family: 'Acme', sans-serif;
-    color:green;
-    background-color:rgb(184, 201, 199);
-}
-
-#stop_button{
-    width: 100%;
-    height: 100%;
-    font-size: 5ch;
-    font-family: 'Acme', sans-serif;
-    color: red;
-    background-color:rgb(184, 201, 199);
+    background-color: gray;
 }
 
 #t1,
@@ -66,8 +61,8 @@ h1 {
     justify-content: center;
     gap: 0.5rem;
     background-color:black;
-    width: 50%;
-    height: 40%;
+    width: 70%;
+    height: 30%;
 }
 
 #t2,
@@ -78,8 +73,8 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     background-color: black;
-    width: 20%;
-    height: 95%;
+    width: 30%;
+    height: 70%;
 }
 
 #light_box_1{
@@ -101,8 +96,20 @@ h1 {
 .red,
 .amber,
 .green {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background-color: gray;
     border-radius: 50%;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    width: 20vw;
+    height: 100%;
+    font-family: 'Acme', sans-serif;
+    font-size: 1cm;
 }
