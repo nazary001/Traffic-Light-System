@@ -19,8 +19,8 @@ h1 {
 
 .global_div {
 display: grid;
-grid-template-columns: 15rem 12rem 15rem;
-grid-template-rows: 15rem 12rem 15rem;
+grid-template-columns: 28rem 10rem 28rem;
+grid-template-rows: 28rem 10rem 28rem;
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
@@ -38,13 +38,24 @@ grid-row-gap: 0px;
     width: 100%;
 }
 
-.hr_vertical{
-    border-top: 0.5rem dashed white;
-    transform: rotate(90deg);
-    height: 0;
-    width: 100%;
-    margin: 0;
+.road_part_horizontal{
+    height: 100%;
 }
+
+.road_part_v_div{
+    border-left: 6px dashed;
+}
+
+.road_part_h_div{
+    border-top: 6px dashed;
+}
+
+.global_div :nth-child(4),
+.global_div :nth-child(6){
+    display: flex;
+    flex-direction: column;
+}
+
 
 .inersection{
     display: flex;
@@ -61,8 +72,8 @@ grid-row-gap: 0px;
     justify-content: center;
     gap: 0.5rem;
     background-color:black;
-    width: 70%;
-    height: 30%;
+    width: 40%;
+    height: 20%;
 }
 
 #t2,
@@ -73,8 +84,8 @@ grid-row-gap: 0px;
     align-items: center;
     gap: 0.5rem;
     background-color: black;
-    width: 30%;
-    height: 70%;
+    width: 20%;
+    height: 40%;
 }
 
 #light_box_1{
@@ -112,4 +123,16 @@ button{
     height: 100%;
     font-family: 'Acme', sans-serif;
     font-size: 1cm;
+}
+
+.give_way_1{
+    width: 20%;
+    height: 20%;
+}
+
+#right_road{
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
